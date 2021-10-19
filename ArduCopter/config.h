@@ -731,3 +731,8 @@
 #ifndef HAL_FRAME_TYPE_DEFAULT
 #define HAL_FRAME_TYPE_DEFAULT AP_Motors::MOTOR_FRAME_TYPE_X
 #endif
+
+// Jack's parameters
+#ifndef JACK_DEFAULT
+#define JACK_DEFAULT      13     // default value for my new parameter
+#endif

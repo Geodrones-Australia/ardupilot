@@ -189,7 +189,7 @@ public:
 
         // 97: RSSI
         k_param_rssi = 97,
-                
+
         //
         // 100: Inertial Nav
         //
@@ -377,6 +377,9 @@ public:
 
         k_param_vehicle = 257, // vehicle common block of parameters
 
+        // 260: jack's parameters
+        k_param_jack,
+
         // the k_param_* space is 9-bits in size
         // 511: reserved
     };
@@ -454,6 +457,9 @@ public:
     AP_Float        fs_ekf_thresh;
     AP_Int16        gcs_pid_mask;
 
+    // jack's params
+    AP_Int8         jack;
+
 #if MODE_THROW_ENABLED == ENABLED
     AP_Enum<ModeThrow::PreThrowMotorState>         throw_motor_start;
 #endif
@@ -530,7 +536,7 @@ public:
 
     // whether to enforce acceptance of packets only from sysid_my_gcs
     AP_Int8 sysid_enforce;
-    
+
 #if ADVANCED_FAILSAFE == ENABLED
     // advanced failsafe library
     AP_AdvancedFailsafe_Copter afs;
@@ -550,7 +556,7 @@ public:
 
     // RC input channels
     RC_Channels_Copter rc_channels;
-    
+
     // control over servo output ranges
     SRV_Channels servo_channels;
 
