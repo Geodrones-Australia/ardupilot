@@ -397,6 +397,10 @@ void ModeRTL::build_path()
     // climb target is above our origin point at the return altitude
     rtl_path.climb_target = Location(rtl_path.origin_point.lat, rtl_path.origin_point.lng, rtl_path.return_target.alt, rtl_path.return_target.get_alt_frame());
 
+    if (g.rtl_alt_type == 2) {
+        rtl_path.return_target.alt = g.rtl_altitude;
+    }
+
     // descent target is below return target at rtl_alt_final
     rtl_path.descent_target = Location(rtl_path.return_target.lat, rtl_path.return_target.lng, g.rtl_alt_final, Location::AltFrame::ABOVE_HOME);
 
